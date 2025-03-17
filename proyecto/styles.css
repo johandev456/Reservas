@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999;
+  }
+  
+  /* Estilo para el modal */
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    width: 400px;
+  }
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+  
+  .modal-container {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .close-modal {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .modal-content input, .modal-content label {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 15px;
+    cursor: pointer;
+  }
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?restaurant') no-repeat center center/cover;
+    color: #0e0e0e;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.restaurantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Margen alrededor de cada tarjeta */
+    padding: 20px;
+    width: calc(45% - 20px); /* Dos tarjetas por fila */
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    margin-bottom: 15px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 5px 0;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+.reservas {
+    margin: 20px 0;
+}
+
+.reservas form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservas label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.reservas input, .reservas select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    width: 100%;
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.error {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.error h2 {
+    color: #d9534f; /* Color rojo para el mensaje de error */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s; /* Transición suave para el fondo */
+}
+
+nav ul li a:hover {
+    background: #28a745; /* Color de fondo al pasar el mouse */
+    color: #fff; /* Color del texto al pasar el mouse */
+}

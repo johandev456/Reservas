@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - Restaurante Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .galeria-restaurante {
+            margin-top: 20px;
+        }
+
+        .galeria-restaurante ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .galeria-restaurante li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .galeria-restaurante img {
+            width: 200px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            border-radius: 8px; /* Bordes redondeados */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Restaurante Elegante</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="detalles">
+            <div class="container">
+                <h2 id="restaurant-name">Detalles del Restaurante</h2>
+                <p id="restaurant-description">Descripción del restaurante aquí.</p>
+                <img id="restaurant-image" src="" alt="Imagen del Restaurante" style="width:100%; border-radius: 5px;">
+                
+                <div class="galeria-restaurante">
+                    <h3>Galería de Imágenes</h3>
+                    <ul id="gallery-list">
+                        <!-- Las imágenes se llenarán dinámicamente -->
+                    </ul>
+                </div>
+
+                <a href="reservas.html?restaurante=italiano" class="btn">Reservar Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Restaurante Elegante. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Obtener el parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurante = urlParams.get('restaurante');
+        const restaurantNameElement = document.getElementById('restaurant-name');
+        const restaurantDescriptionElement = document.getElementById('restaurant-description');
+        const restaurantImageElement = document.getElementById('restaurant-image');
+        const galleryList = document.getElementById('gallery-list');
+
+        if (restaurante === 'italiano') {
+            restaurantNameElement.textContent = 'Restaurante Italiano';
+            restaurantDescriptionElement.textContent = 'Disfruta de la auténtica cocina italiana con una variedad de pastas, pizzas y más en un ambiente acogedor.';
+            restaurantImageElement.src = 'https://st2.depositphotos.com/3690537/5231/i/450/depositphotos_52318349-stock-photo-dining-out.jpg';
+
+            // Imágenes de la galería para el restaurante italiano
+            const italianImages = [
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNgRFfj16Jb9G3opAysBbyQjL1IK97FfNKy31P9CrARZJsUTnfn_DlHwQJk_1xa5lzo0U&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFNek-QngEAzt9Gn2R1jD1G1bHiDqcQ8PaKYju-mCFGuHq9r95OtCZI_eLeT6D_6mryr0&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgQPnmCybsfIPxWAD3sY7xInpcmKlzYvs2Qc6rFiO7wC3RRT2wBNTMQ27cP-4M7TumI4&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMFLR9BFY35_54LVnqIrF6qBM9kQaIWjq0qA&s'
+            ];
+
+            italianImages.forEach(image => {
+                const li = document.createElement('li');
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = 'Comida Italiana';
+                li.appendChild(img);
+                galleryList.appendChild(li);
+            });
+
+        } else if (restaurante === 'mexicano') {
+            restaurantNameElement.textContent = 'Restaurante Mexicano';
+            restaurantDescriptionElement.textContent = 'Saborea los mejores platillos mexicanos, desde tacos hasta enchiladas, en un ambiente festivo y colorido.';
+            restaurantImageElement.src = 'https://st2.depositphotos.com/3386033/6930/i/450/depositphotos_69308469-stock-photo-elegant-restaurant-interior.jpg';
+
+            // Imágenes de la galería para el restaurante mexicano
+            const mexicanImages = [
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDq5Jz3L5g4j1uyCTtlKcRbDueLvp4qatTurB9kl-hkSlH0O-toza5U-6uWfbvt8XtBHw&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxz1OmlgbEjiFgeOpcfCay5HIAyh7Kpg-rtnGQhnISpK8kKnKVT5j_HoOdDKYdXfNRGmA&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyv687HTjvTz0B2tHd12xRoBpLxBaq-mGvGurajkxwVhjoOpfc10GpDqmOL2Cc44bqJQY&usqp=CAU',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuQ_HdCI92nSVSEqGv-FQqLpq0lm0ImT2Vaw&s'
+            ];
+
+            mexicanImages.forEach(image => {
+                const li = document.createElement('li');
+                const img = document.createElement('img');
+                img.src = image;
+                img.alt = 'Comida Mexicana';
+                li.appendChild(img);
+                galleryList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
